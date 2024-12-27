@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { auth, googleProvider } from "../firebse";
+import "../css/Login.css"
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,

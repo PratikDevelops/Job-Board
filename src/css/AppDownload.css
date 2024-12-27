@@ -1,0 +1,102 @@
+.app-download-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 250px;
+    padding-top: 50px;
+    margin-bottom: 25px;
+    background-color: #f4f7fc;
+    flex-wrap: wrap;
+  }
+  
+  .app-download-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 25px;
+  }
+  
+  .download-heading h1 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .download-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-start;
+  }
+  
+  .store-logo {
+    width: 130px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .store-logo:hover {
+    transform: scale(1.1);
+  }
+  
+  .app-main-img {
+    max-width: 270px;
+    height: auto;
+    border-radius: 12px;
+  }
+ 
+  @media (max-width: 1024px) {
+    .app-download-container {
+      padding-left: 20px;
+      padding-top: 30px;
+      justify-content: center;
+    }
+  
+    .app-download-content {
+      margin-right: 0;
+      align-items: center;
+    }
+  
+    .download-heading h1 {
+      font-size: 22px;
+    }
+  
+    .download-buttons {
+      justify-content: center;
+    }
+  
+    .store-logo {
+      width: 110px;
+    }
+  
+    .app-main-img {
+      max-width: 230px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .app-download-container {
+      padding-left: 0;
+      padding-top: 25px;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .download-heading h1 {
+      font-size: 20px;
+    }
+  
+    .download-buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .store-logo {
+      width: 100px;
+    }
+  
+    .app-main-img {
+      max-width: 200px;
+    }
+  }
+  

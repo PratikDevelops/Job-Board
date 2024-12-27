@@ -6,6 +6,8 @@ import Application from './Pages/Application'
 import Login from './Components/Login'
 import RecruiterLogin from './Components/RecruiterLogin'
 
+import ApplyNow from './Components/ApplyNow'
+
 function App() {
   return (
     <div>
@@ -15,6 +17,7 @@ function App() {
         <Route path='/applications' element={<Application/>}/>
         <Route path="/signup" element={<Login />} />
         <Route path="/recruiter-signup" element={<RecruiterLogin/>}/>
+        <Route path="/apply-now/:jobId" element={<ApplyNow />} />
       </Routes>
     </div>
   )

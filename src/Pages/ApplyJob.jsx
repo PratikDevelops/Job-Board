@@ -1,21 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
 import { assets } from '../assets/assets';
 import kconvert from "k-convert";
 import moment from "moment";
+import "../css/ApplyJob.css"
 
 function ApplyJob() {
   const { state } = useLocation();
+  const navigate = useNavigate();
   const [jobData, setJobData] = useState(null);
-
- 
 
   useEffect(() => {
     if (state?.job) {
       setJobData(state.job); 
     }
   }, [state]);
+
+  const handleApplyNowClick = (jobId) => {
+    navigate(`/apply-now/${jobId}`, { state: { job: jobData } });
+  };
 
   if (!jobData) {
     return <div className="loading">Loading job details...</div>;
@@ -51,7 +55,7 @@ function ApplyJob() {
             </div>
           </div>
           <div className="apply-now-section">
-            <button className="apply-now-btn">Apply Now</button>
+            <button className="apply-now-btn" onClick={() => handleApplyNowClick(jobData._id)}>Apply Now</button>
             <p className="job-posted-time">Posted {moment(jobData.date).fromNow()}</p>
           </div>
         </div>
@@ -59,7 +63,7 @@ function ApplyJob() {
         <div className="job-description-section">
           <h2 className="description-title">Job Description</h2>
           <div className="job-description" dangerouslySetInnerHTML={{ __html: jobData.description }}></div>
-          <button className="apply-now-btn">Apply Now</button>
+          <button className="apply-now-btn" onClick={() => handleApplyNowClick(jobData._id)}>Apply Now</button>
         </div>
       </div>
     </>

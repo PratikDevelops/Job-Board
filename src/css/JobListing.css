@@ -1,0 +1,163 @@
+.joblisting-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 25px 20px;
+    gap: 25px;
+  }
+  
+  .left-section {
+    flex: 1;
+    min-width: 250px;
+    max-width: 320px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .right-section {
+    flex: 2;
+    min-width: 600px;
+    padding: 20px;
+  }
+  
+  .filter-section {
+    margin-top: 30px;
+  }
+  
+  .filter-section h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #333;
+  }
+  
+  .filter-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .filter-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .filter-item input {
+    margin-right: 12px;
+  }
+  
+  .job-list {
+    margin-top: 30px;
+  }
+  
+  .job-list h3 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+  }
+  
+  .job-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  
+  .pagination-btn {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    margin: 0 5px;
+  }
+  
+  .pagination-btn.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+  }
+  
+  .pagination-btn:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .no-jobs-message {
+    color: #ff0000;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  @media (max-width: 768px) {
+    .joblisting-container {
+      flex-direction: column;
+      padding: 15px 10px;
+      gap: 15px;
+    }
+  
+    .left-section {
+      min-width: 100%;
+      max-width: 100%;
+    }
+  
+    .right-section {
+      min-width: 100%;
+    }
+  
+    .filter-section h4 {
+      font-size: 1rem;
+    }
+  
+    .filter-item {
+      font-size: 0.9rem;
+    }
+  
+    .pagination-btn {
+      padding: 8px 12px;
+      font-size: 0.9rem;
+    }
+  
+    .no-jobs-message {
+      font-size: 18px;
+    }
+  
+    .job-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .joblisting-container {
+      padding: 10px;
+    }
+  
+    .pagination-btn {
+      padding: 6px 10px;
+      font-size: 0.8rem;
+    }
+  
+    .no-jobs-message {
+      font-size: 16px;
+    }
+  
+    .pagination-btn {
+      margin: 5px 3px;
+    }
+  
+    .job-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+  

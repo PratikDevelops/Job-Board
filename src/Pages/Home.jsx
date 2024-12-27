@@ -5,6 +5,7 @@ import JobListing from '../Components/JobListing'
 
 import Footer from '../Components/Footer'
 import AppDownload from '../Components/AppDownload.jsx'
+import ApplyNow from '../Components/ApplyNow.jsx'
 
 function Home() {
   return (
@@ -14,6 +15,7 @@ function Home() {
        <JobListing/>
        <AppDownload/>
        <Footer/>
+       <ApplyNow/>
     </div>
   )
 }

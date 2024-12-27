@@ -1,6 +1,7 @@
 import React from 'react';
 import { assets } from '../assets/assets';
 import { useNavigate } from 'react-router-dom';
+import "../css/Jobcard.css"
 
 function Jobcard({ job }) {
   const navigate = useNavigate();
@@ -19,6 +20,10 @@ function Jobcard({ job }) {
     window.scrollTo(0, 0);
   };
 
+  const handleApplyNowClick = (e, jobId) => {
+    navigate(`/apply-now/${jobId}`, { state: { job } });
+  };
+
   return (
     <div className="job-card">
       <div className="company-icon">
@@ -33,7 +38,7 @@ function Jobcard({ job }) {
       <p className="job-description" dangerouslySetInnerHTML={descriptionHtml} />
       <div className="job-actions">
         <button 
-          onClick={(e) => handleNavigation(e, job._id)} 
+          onClick={(e) => handleApplyNowClick(e, job._id)} 
           className="apply-now"
         >
           Apply Now

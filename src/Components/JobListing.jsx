@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { AppContext } from '../Context/AppContext';
 import { JobCategories, JobLocations, jobsData } from '../assets/assets';
 import Jobcard from './Jobcard';
+import "../css/JobListing.css"
 
 function JobListing() {
   const { searchFilter, setSearchFilter, isSearched } = useContext(AppContext);

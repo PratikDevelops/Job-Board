@@ -1,6 +1,7 @@
 import React, { useContext, useRef } from "react";
 import { assets } from "../assets/assets";
 import { AppContext } from "../Context/AppContext";
+import "../css/HeroSection.css"
 
 function HeroSection() {
   const { searchFilter, setIsSearched, setSearchFilter } = useContext(AppContext);
