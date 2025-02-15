@@ -63,6 +63,7 @@ function RecruiterLogin() {
       await updateProfile(userCredential.user, { displayName: name });
       toast.success("Recruiter account created successfully!");
       clearFields();
+      navigate("/add-job"); // Redirect to AddJobPage after successful signup
     } catch (error) {
       toast.error("Sign-up failed: " + error.message);
     }
@@ -79,9 +80,9 @@ function RecruiterLogin() {
     }
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      navigate("/recruiter-login");
       toast.success("Logged in successfully!");
       clearFields();
+      navigate("/add-job"); // Redirect to AddJobPage after successful login
     } catch (error) {
       toast.error("Login failed: " + error.message);
     }
@@ -91,7 +92,7 @@ function RecruiterLogin() {
     try {
       const result = await signInWithPopup(auth, googleProvider);
       toast.success("Google Sign-In successful!");
-      navigate("/"); 
+      navigate("/add-job"); // Redirect to AddJobPage after successful Google sign-in
     } catch (error) {
       toast.error("Google Sign-In failed: " + error.message);
     }
@@ -195,6 +196,7 @@ function RecruiterLogin() {
           <button className="auth-button" onClick={isLogin ? handleLogin : handleSignup}>
             {isLogin ? "Login" : "Sign Up"}
           </button>
+
           <p className="toggle-message">
             {isLogin ? "Don't have an account?" : "Already have an account?"}{" "}
             <span
@@ -206,13 +208,9 @@ function RecruiterLogin() {
               {isLogin ? "Sign Up" : "Login"}
             </span>
           </p>
-          <button className="auth-button google-button" onClick={handleGoogleSignIn}>
-            Sign in with Google
-          </button>
         </div>
       </div>
 
-    
       <ToastContainer />
     </>
   );
